@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/Ardor3Dv1/!svn/ver/1471/trunk/ardor3d-lwjgl/lib/lwjgl/native/linux
+END
+libopenal64.so
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/Ardor3Dv1/!svn/ver/1364/trunk/ardor3d-lwjgl/lib/lwjgl/native/linux/libopenal64.so
+END
+liblwjgl64.so
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/Ardor3Dv1/!svn/ver/1471/trunk/ardor3d-lwjgl/lib/lwjgl/native/linux/liblwjgl64.so
+END
+libopenal.so
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/Ardor3Dv1/!svn/ver/1364/trunk/ardor3d-lwjgl/lib/lwjgl/native/linux/libopenal.so
+END
+liblwjgl.so
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/Ardor3Dv1/!svn/ver/1471/trunk/ardor3d-lwjgl/lib/lwjgl/native/linux/liblwjgl.so
+END
+libjinput-linux64.so
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/Ardor3Dv1/!svn/ver/925/trunk/ardor3d-lwjgl/lib/lwjgl/native/linux/libjinput-linux64.so
+END
+libjinput-linux.so
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/Ardor3Dv1/!svn/ver/1471/trunk/ardor3d-lwjgl/lib/lwjgl/native/linux/libjinput-linux.so
+END

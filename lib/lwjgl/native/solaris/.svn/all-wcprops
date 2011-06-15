@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/Ardor3Dv1/!svn/ver/1471/trunk/ardor3d-lwjgl/lib/lwjgl/native/solaris
+END
+libopenal64.so
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/Ardor3Dv1/!svn/ver/1471/trunk/ardor3d-lwjgl/lib/lwjgl/native/solaris/libopenal64.so
+END
+liblwjgl64.so
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/Ardor3Dv1/!svn/ver/1471/trunk/ardor3d-lwjgl/lib/lwjgl/native/solaris/liblwjgl64.so
+END
+libopenal.so
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/Ardor3Dv1/!svn/ver/1364/trunk/ardor3d-lwjgl/lib/lwjgl/native/solaris/libopenal.so
+END
+liblwjgl.so
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/Ardor3Dv1/!svn/ver/1471/trunk/ardor3d-lwjgl/lib/lwjgl/native/solaris/liblwjgl.so
+END

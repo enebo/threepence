@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/Ardor3Dv1/!svn/ver/1471/trunk/ardor3d-lwjgl/lib/lwjgl/native/macosx
+END
+openal.dylib
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/Ardor3Dv1/!svn/ver/144/trunk/ardor3d-lwjgl/lib/lwjgl/native/macosx/openal.dylib
+END
+liblwjgl.jnilib
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/Ardor3Dv1/!svn/ver/1471/trunk/ardor3d-lwjgl/lib/lwjgl/native/macosx/liblwjgl.jnilib
+END
+libjinput-osx.jnilib
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/Ardor3Dv1/!svn/ver/925/trunk/ardor3d-lwjgl/lib/lwjgl/native/macosx/libjinput-osx.jnilib
+END

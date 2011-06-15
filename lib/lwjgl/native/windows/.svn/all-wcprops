@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/Ardor3Dv1/!svn/ver/1471/trunk/ardor3d-lwjgl/lib/lwjgl/native/windows
+END
+OpenAL64.dll
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/Ardor3Dv1/!svn/ver/1364/trunk/ardor3d-lwjgl/lib/lwjgl/native/windows/OpenAL64.dll
+END
+jinput-raw_64.dll
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/Ardor3Dv1/!svn/ver/1471/trunk/ardor3d-lwjgl/lib/lwjgl/native/windows/jinput-raw_64.dll
+END
+lwjgl64.dll
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/Ardor3Dv1/!svn/ver/1471/trunk/ardor3d-lwjgl/lib/lwjgl/native/windows/lwjgl64.dll
+END
+jinput-dx8.dll
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/Ardor3Dv1/!svn/ver/1471/trunk/ardor3d-lwjgl/lib/lwjgl/native/windows/jinput-dx8.dll
+END
+lwjgl.dll
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/Ardor3Dv1/!svn/ver/1471/trunk/ardor3d-lwjgl/lib/lwjgl/native/windows/lwjgl.dll
+END
+jinput-raw.dll
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/Ardor3Dv1/!svn/ver/1471/trunk/ardor3d-lwjgl/lib/lwjgl/native/windows/jinput-raw.dll
+END
+OpenAL32.dll
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/Ardor3Dv1/!svn/ver/1364/trunk/ardor3d-lwjgl/lib/lwjgl/native/windows/OpenAL32.dll
+END
+jinput-dx8_64.dll
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/Ardor3Dv1/!svn/ver/1471/trunk/ardor3d-lwjgl/lib/lwjgl/native/windows/jinput-dx8_64.dll
+END

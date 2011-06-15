@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/Ardor3Dv1/!svn/ver/1471/trunk/ardor3d-lwjgl/lib/lwjgl
+END
+LICENSE
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/Ardor3Dv1/!svn/ver/1405/trunk/ardor3d-lwjgl/lib/lwjgl/LICENSE
+END
+jinput.jar
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/Ardor3Dv1/!svn/ver/1471/trunk/ardor3d-lwjgl/lib/lwjgl/jinput.jar
+END
+lwjgl_util.jar
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/Ardor3Dv1/!svn/ver/1471/trunk/ardor3d-lwjgl/lib/lwjgl/lwjgl_util.jar
+END
+lwjgl.jar
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/Ardor3Dv1/!svn/ver/1471/trunk/ardor3d-lwjgl/lib/lwjgl/lwjgl.jar
+END
+lwjgl_util_applet.jar
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/Ardor3Dv1/!svn/ver/1471/trunk/ardor3d-lwjgl/lib/lwjgl/lwjgl_util_applet.jar
+END
+version_info.txt
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/Ardor3Dv1/!svn/ver/1471/trunk/ardor3d-lwjgl/lib/lwjgl/version_info.txt
+END
