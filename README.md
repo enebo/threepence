@@ -27,7 +27,7 @@ class Box &lt; ExampleBase
 	  texture "images/ardor3d_white_256.jpg"
 	end.duplicate_as(:right_box) do
 	  at 0, 0, 3
-	end
+        end
       end
     end
   end
