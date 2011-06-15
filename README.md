@@ -9,7 +9,7 @@ Here is a simple example showing two boxes rotating around each other while rota
 <pre><code>
 require 'example_base'   # See example_base.rb in samples or just use it
 
-class Box < ExampleBase
+class Box &lt; ExampleBase
   def initialize
     super("Box Example")
   end
