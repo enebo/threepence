@@ -26,7 +26,7 @@ module ThreePence
       code.arity == 1 ? code[self] : self.instance_eval(&code) if block_given?
     end
 
-    def method_missing(name, type, *args, &code)
+    def method_missing(type, name, *args, &code)
       ui = instantiate_uigoodie(type, *args, &code)
       ui.name = name.to_s if ui.respond_to? :name
 
