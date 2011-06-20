@@ -42,6 +42,16 @@ There are two DSLs which exist in Threepence.  The first is the layout DSL shown
 
 The second DSL is for a HUD-ui.  The format of this DSL is very similiar to the layout DSL in structure.
 
+## Running
+
+The commandline is a little rougher than it should be for the time being.  To get started, you can run the samples:
+
+<pre><code>
+jruby -J-Djava.library.path=lib/lwjgl/native/macosx -Ilib:samples samples/simple_ui.rb
+</pre></code>
+
+where java.library.path should be changed to the directory for your particular OS.
+
 ## Futures
 
 Ardor3d has some slated work towards making it work on Android.  This would make it possible for Threepence to run on Android as well via Ruboto.
