@@ -22,10 +22,11 @@ class SimplerUIExample < ExampleBase
     hud.layout do
       frame(:frame, "0000 FPS ") do
         panel(:buttons, BorderLayout.new) do
+          layout_data :center
           button(:button_n, "Button North") do
-            set_gap 10
-            set_layout_data BorderLayoutData::NORTH
-            set_tooltip_text "This is a tooltip!"
+            gap 10
+            layout_data :center
+            tooltip_text "This is a tooltip!"
           end
         end
       end

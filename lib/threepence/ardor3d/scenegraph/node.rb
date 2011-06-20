@@ -1,7 +1,9 @@
+require 'threepence/util/helpers'
 require 'threepence/shape'
 
 class com::ardor3d::scenegraph::Node
   include ThreePence::Shape
+  extend ThreePence::ClassMethods
 
   # Layout the scenegraph based on the provided block of code.
   def layout(&code)

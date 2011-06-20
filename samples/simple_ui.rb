@@ -66,43 +66,43 @@ class SimpleUIExample < ExampleBase
     frame = nil
     hud.layout do
       frame(:frame, "UI Sample: 0000 FPS ") do
-	tabs(:tabbed_pane, UITabbedPane::TabPlacement::NORTH) do
-	  widgets(:panel, BorderLayout.new) do
+	tabbed_pane(:tabs, UITabbedPane::TabPlacement::NORTH) do
+	  panel(:widgets, BorderLayout.new) do
 	    #	  color :dark_gray
-	    button_a(:button, "Button A") do
+	    button(:button_a, "Button A") do
 	      #	    icon(26, 20, texture("images/ardor3d_white_256.jpg"))
-	      set_gap 10
-	      set_layout_data BorderLayoutData::NORTH
-	      set_tooltip_text "This is a tooltip!"
+	      gap 10
+	      layout_data :north
+	      tooltip_text "This is a tooltip!"
 	    end
-	    center(:panel) do
-	      set_layout_data BorderLayoutData::CENTER
-	      check1(:check_box, "Hello\n(disabled)") do
-		set_selected true
-		set_enabled false
+	    panel(:center) do
+	      layout_data :center
+	      check_box(:check1, "Hello\n(disabled)") do
+		selected true
+		enabled false
 	      end
-	      check2(:check_box, "World")
+	      check_box(:check2, "World")
 	      group = button_group
-	      radio1(:radio_button) do
-		set_button_text("option [i]A[/i]", true)
-		set_group group
+	      radio_button(:radio1) do
+		button_text "option [i]A[/i]", true
+		group group
 	      end
-	      radio2(:radio_button) do
-		set_button_text("option [c=#f00]B[/c]", true)
-		set_group group
+	      radio_button(:radio2) do
+		button_text "option [c=#f00]B[/c]", true
+		group group
 	      end
 	      slider = slider(:slider, Orientation::Horizontal, 0, 12, 0) do
-		set_snap_to_values true
-		set_minimum_content_width 100
+		snap_to_values true
+		minimum_content_width 100
 	      end
-	      lslider(:label, "0") do
-		set_layout_data GridLayoutData.SpanAndWrap(2)
+	      label(:lslider, "0") do
+		layout_data GridLayoutData::SpanAndWrap(2)
 		slider.add_action_listener { self.text = slider.value.to_s}
 	      end
 	      progress_bar(:progress_bar, "Loading: ", true) do
-		set_percent_filled 0
-		set_local_component_width 250
-		set_maximum_content_width get_content_width
+		percent_filled 0
+		local_component_width 250
+		maximum_content_width get_content_width
 		add_controller do |time, caller|
 		  caller.percent_filled = timer.time_in_seconds / 15
 		end
@@ -113,14 +113,14 @@ class SimpleUIExample < ExampleBase
       end
     end
 
-    @frame = hud.find_child(:frame)
+    @frame = hud.find_child :frame
 
     @frame.updateMinimumSizeFromContents
-    @frame.layout()
-    @frame.pack()
-    @frame.set_use_standin(true)
-    @frame.set_opacity(1)
-    @frame.set_location_relative_to(cr.camera)
+    @frame.layout
+    @frame.pack
+    @frame.use_standin true
+    @frame.opacity 1
+    @frame.location_relative_to cr.camera
 
 #    panel = makeWidgetPanel
 #    panel2 = makeLoginPanel
