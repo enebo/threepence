@@ -23,16 +23,22 @@ module ThreePence
     end
 
     def layout(&code)
-      code.arity == 1 ? code[self] : self.instance_eval(&code) if block_given?
+      if block_given?
+        (code.arity == 1 ? code[self] : self.instance_eval(&code)).tap do |c|
+          c.updateMinimumSizeFromContents
+          c.layout
+          c.pack
+          c.use_standin true
+        end
+      end
     end
 
     def method_missing(type, name, *args, &code)
-      ui = instantiate_uigoodie(type, *args, &code)
-      ui.name = name.to_s if ui.respond_to? :name
-
-      code.arity == 1 ? code[ui] : ui.instance_eval(&code) if block_given?
-      ui_add ui
-      ui
+      instantiate_uigoodie(type, *args, &code).tap do |ui|
+        ui.name = name.to_s if ui.respond_to? :name
+        code.arity == 1 ? code[ui] : ui.instance_eval(&code) if block_given?
+        ui_add ui
+      end
     end
 
     def instantiate_uigoodie(component, *args, &code)
@@ -65,8 +71,8 @@ class com::ardor3d::extension::ui::UIComponent
   gesetter :font_styles
   gesetter :layout_data, :layout_data_transformer
 
-  alias :local_component_size :set_local_component_size
-  alias :content_size :set_content_size
+  alias :local_component_size :setLocalComponentSize
+  alias :content_size :setContentSize
 
   gesetter :content_width
   gesetter :content_height
@@ -77,6 +83,9 @@ class com::ardor3d::extension::ui::UIComponent
 
   gesetter :maximum_content_width
   gesetter :maximum_content_height
+
+  alias :minimum_content_size :setMinimumContentSize
+
   gesetter :minimum_content_width
   gesetter :minimum_content_height
   gesetter :consume_key_events
@@ -85,12 +94,12 @@ class com::ardor3d::extension::ui::UIComponent
   gesetter :margin
   gesetter :padding
 
-  alias :hud_xy :set_hud_xy
+  alias :hud_xy :setHudXY
 
   gesetter :hud_x
   gesetter :hud_y
 
-  alias :local_xy :set_local_xy
+  alias :local_xy :setLocalXY
   
   gesetter :local_x
   gesetter :local_y

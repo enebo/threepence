@@ -1,7 +1,7 @@
 require 'example_base'
 
+java_import com.ardor3d.extension.ui.UITabbedPane
 java_import com.ardor3d.extension.ui.layout.BorderLayout
-java_import com.ardor3d.extension.ui.layout.BorderLayoutData
 
 # Illustrates how to display GUI primitives on a canvas.
 class SimplerUIExample < ExampleBase
@@ -22,11 +22,30 @@ class SimplerUIExample < ExampleBase
     hud.layout do
       frame(:frame, "0000 FPS ") do
         panel(:buttons, BorderLayout.new) do
-          layout_data :center
-          button(:button_n, "Button North") do
+          button(:button_n, "North") do
+            gap 10
+            layout_data :north
+            tooltip_text "North tooltip!"
+          end
+          button(:button_n, "South") do
+            gap 10
+            layout_data :south
+            tooltip_text "South tooltip!"
+          end
+          button(:button_n, "East") do
+            gap 10
+            layout_data :east
+            tooltip_text "East tooltip!"
+          end
+          button(:button_n, "West") do
+            gap 10
+            layout_data :west
+            tooltip_text "West tooltip!"
+          end
+          button(:button_n, "Center") do
             gap 10
             layout_data :center
-            tooltip_text "This is a tooltip!"
+            tooltip_text "Center tooltip!"
           end
         end
       end
