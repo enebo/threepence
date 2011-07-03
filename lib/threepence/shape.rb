@@ -48,7 +48,7 @@ module ThreePence
       'oriented_box' => VectorCreator.new(SC::OrientedBox),
       'pq_torus' => VectorCreator.new(SC::PQTorus),
       'pyramid' => VectorCreator.new(SC::Pyramid),
-      'quad' => VectorCreator.new(SC::Quad),
+      'quad' => proc { |name, *args| SC::Quad.new name },
       'rounded_box' => VectorCreator.new(SC::RoundedBox),
       'skybox' => SkyboxCreator,     # shape/skybox (-core)
       'sphere' => VectorCreator.new(SC::Sphere, B::BoundingSphere),
