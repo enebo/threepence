@@ -128,10 +128,10 @@ end
 
 class com::ardor3d::extension::ui::UIFrame
   def ui_add(component)
-    set_content_panel component
+    content_panel.add component
   end
 
-  gesetter :resizable
+  gesetter :resizeable
   gesetter :draggable
   gesetter :location_relative_to
   gesetter :content_panel
