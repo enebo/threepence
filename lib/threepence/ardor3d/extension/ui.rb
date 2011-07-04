@@ -37,6 +37,7 @@ module ThreePence
       instantiate_uigoodie(type, *args, &code).tap do |ui|
         ui.name = name.to_s if ui.respond_to? :name
         code.arity == 1 ? code[ui] : ui.instance_eval(&code) if block_given?
+        $last_ui = ui # FIXME: Hacky, but it will work for now
         ui_add ui
       end
     end
@@ -123,6 +124,33 @@ class com::ardor3d::extension::ui::UIComponent
 
   def layout_data_transformer(value)
     LAYOUT_CONSTANTS[value.to_s]
+  end
+
+  ALIGNMENT_CONSTANTS = {
+    'top_left' => com.ardor3d.extension.ui.util.Alignment::TOP_LEFT,
+    'top' => com.ardor3d.extension.ui.util.Alignment::TOP,
+    'top_right' => com.ardor3d.extension.ui.util.Alignment::TOP_RIGHT,
+    'middle' => com.ardor3d.extension.ui.util.Alignment::MIDDLE,
+    'right' => com.ardor3d.extension.ui.util.Alignment::RIGHT,
+    'bottom_left' => com.ardor3d.extension.ui.util.Alignment::BOTTOM_LEFT,
+    'bottom' => com.ardor3d.extension.ui.util.Alignment::BOTTOM,
+    'bottom_right' => com.ardor3d.extension.ui.util.Alignment::BOTTOM_RIGHT
+  }
+
+  def alignment_data_transformer(value)
+    ALIGNMENT_CONSTANTS[value.to_s]
+  end
+
+  # Handy shortcut when using AnchorLayout
+  #
+  # anchor_from :top_left, :previous, :bottom_left, 0, -5
+  # :previous means last encountered element.  You can also pass in a real
+  # UIComponent reference when your needs are different
+  def anchor_from(my_point, parent, parent_point, x_offset, y_offset)
+    my_point = alignment_data_transformer(my_point)
+    parent_point = alignment_data_transformer(parent_point)
+    parent = $last_ui if parent == :previous
+    layout_data com.ardor3d.extension.ui.layout.AnchorLayoutData.new(my_point, parent, parent_point, x_offset, y_offset)
   end
 end
 
