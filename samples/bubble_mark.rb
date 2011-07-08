@@ -68,16 +68,16 @@ class BubbleMark < ExampleBase
           anchor_from :top_left, :previous, :bottom_left, 0, -15
         end
         group = button_group
-        ["16", "32", "64", "128"].each do |n|
-          radio_button("balls#{n}", n) do
+        ["16", "32", "64", "128"].each do |number|
+          radio_button("balls#{number}", number) do
             anchor_from :top_left, :previous, :bottom_left, 0, -5
             selectable true
             selected true
-            addActionListener { |event| resetBalls(number) }
+            addActionListener { |event| resetBalls(number.to_i) }
             group group
           end
         end
-        layout
+        content_panel.layout
       end
     end
     @ball_frame = hud.find_child :bubbles

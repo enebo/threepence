@@ -48,6 +48,7 @@ class SimplerUIExample < ExampleBase
             tooltip_text "Center tooltip!"
           end
         end
+        pack
       end
     end
   end
