@@ -152,7 +152,6 @@ end
 
 class com::ardor3d::extension::ui::UIFrame
   def ui_add(component)
-    puts "ADDING #{component} to content_panel of frame #{name}"
     content_panel.add component
   end
 
