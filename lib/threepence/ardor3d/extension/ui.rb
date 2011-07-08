@@ -24,13 +24,9 @@ module ThreePence
 
     def layout(&code)
       if block_given?
-        (code.arity == 1 ? code[self] : self.instance_eval(&code)).tap do |c|
-          c.updateMinimumSizeFromContents
-          c.layout
-          c.pack
-          c.use_standin true
-        end
+        code.arity == 1 ? code[self] : self.instance_eval(&code)
       end
+      self
     end
 
     def method_missing(type, name, *args, &code)
@@ -150,12 +146,13 @@ class com::ardor3d::extension::ui::UIComponent
     my_point = alignment_data_transformer(my_point)
     parent_point = alignment_data_transformer(parent_point)
     parent = $last_ui if parent == :previous
-    layout_data com.ardor3d.extension.ui.layout.AnchorLayoutData.new(my_point, parent, parent_point, x_offset, y_offset)
+    set_layout_data com.ardor3d.extension.ui.layout.AnchorLayoutData.new(my_point, parent, parent_point, x_offset, y_offset)
   end
 end
 
 class com::ardor3d::extension::ui::UIFrame
   def ui_add(component)
+    puts "ADDING #{component} to content_panel of frame #{name}"
     content_panel.add component
   end
 
