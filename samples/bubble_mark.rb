@@ -22,6 +22,7 @@ end
 
 # The famous BubbleMark UI test, recreated using Ardor3D UI components.
 class BubbleMark < ExampleBase
+  attr_accessor :balls_collide
   BALL_SIZE = 52
 
   def initialize
@@ -35,6 +36,8 @@ class BubbleMark < ExampleBase
     @start_time = Time.now  # Use Ruby version when it is nicer
 
     cam = canvas.canvas_renderer.camera
+    app = self # FIXME: Should DSL provide app and canvas as builtin?
+    can = canvas
 
     hud.layout do
       frame(:bubbles, "Bubbles") do
@@ -56,13 +59,13 @@ class BubbleMark < ExampleBase
         check_box(:vsync, "Enabled VSync") do
           anchor_from :top_left, previous, :top_left, 5, -5
           selectable = true
-          add_action_listener { |e| canvas.vsync_enabled = selected? }
+          add_action_listener { |e| can.vsync_enabled = selected? }
         end
         check_box(:collide, "Enable ball-ball collision") do
           anchor_from :top_left, :previous, :bottom_left, 0, -5
-          selectable true
-          selected !@skip_ball_collide
-          addActionListener { |e| @skip_ball_collide = !collide.selected? }
+          selectable = true
+          selected = app.balls_collide
+          addActionListener { |e| app.balls_collide = selected? }
         end
         previous = label(:balls_label, "# of balls:") do
           anchor_from :top_left, :previous, :bottom_left, 0, -15
@@ -73,7 +76,7 @@ class BubbleMark < ExampleBase
             anchor_from :top_left, :previous, :bottom_left, 0, -5
             selectable true
             selected true
-            addActionListener { |event| resetBalls(number.to_i) }
+            addActionListener { |event| app.resetBalls(number.to_i) }
             group group
           end
         end
@@ -106,7 +109,7 @@ class BubbleMark < ExampleBase
     @ball_frame.title = " fps"
   end
 
-  def updateExample(timer)
+  def update_application(timer)
     now = Time.now # use the Ruby core libs when you want too
     dt = now - @start_time
 
@@ -116,7 +119,7 @@ class BubbleMark < ExampleBase
       @frames = 0
     end
 
-    unless @skip_ball_collide
+    if balls_collide
       length = @balls.length
       length.times do |i|
         (length - i - 1).times do |j|
