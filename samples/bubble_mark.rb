@@ -56,13 +56,13 @@ class BubbleMark < ExampleBase
         check_box(:vsync, "Enabled VSync") do
           anchor_from :top_left, previous, :top_left, 5, -5
           selectable = true
-          add_action_listener { |event| canvas.vsync_enabled = selected? }
+          add_action_listener { |e| canvas.vsync_enabled = selected? }
         end
         check_box(:collide, "Enable ball-ball collision") do
           anchor_from :top_left, :previous, :bottom_left, 0, -5
           selectable true
           selected !@skip_ball_collide
-          addActionListener { |event| @skip_ball_collide = !collide.selected? }
+          addActionListener { |e| @skip_ball_collide = !collide.selected? }
         end
         previous = label(:balls_label, "# of balls:") do
           anchor_from :top_left, :previous, :bottom_left, 0, -15
